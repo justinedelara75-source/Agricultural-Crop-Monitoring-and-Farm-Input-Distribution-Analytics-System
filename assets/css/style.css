@@ -1,0 +1,81 @@
+
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)),
+        url("../img/farm.png");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.login-wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card{
+width:400px;
+
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(15px);
+
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.3);
+
+color:white;
+}
+
+.system-title {
+    font-weight: 700;
+}
+
+.system-sub {
+    color: #ffd54f;
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+}
+
+.form-control::placeholder {
+    color: #eee;
+}
+
+.input-group-text {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+}
+
+.btn-login {
+
+    background: linear-gradient(to right, #2e7d32, #1b5e20);
+
+    border: none;
+    border-radius: 30px;
+    padding: 12px;
+
+    font-weight: 600;
+    color: white;
+}
+
+.btn-login:hover {
+    opacity: .9;
+}
+
+a {
+    color: #ffd54f;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+}

@@ -1,0 +1,173 @@
+/* GENERAL */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+
+    background-image: url("../img/farm.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* LEFT PANEL */
+
+.branding-panel {
+
+    background: linear-gradient(135deg,
+            rgba(20, 83, 45, 0.95),
+            rgba(34, 139, 34, 0.9)),
+
+        url("../img/farm.png");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+}
+
+.branding-content h2 {
+    font-size: 32px;
+}
+
+.branding-content h4 {
+    font-size: 22px;
+}
+
+/* REGISTER CARD */
+
+.register-card {
+
+    width: 100%;
+    max-width: 650px;
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    backdrop-filter: blur(10px);
+
+    border: none;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+
+}
+
+/* TITLE */
+
+.register-card h3 {
+    font-weight: 700;
+    font-size: 28px;
+}
+
+/* INPUT FIELDS */
+
+.form-control,
+.form-select {
+
+    border-radius: 14px;
+
+    padding: 12px 15px;
+
+    border: 1px solid #ddd;
+
+    background: #fafafa;
+
+    transition: all .2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+
+    border-color: #2e7d32;
+
+    box-shadow: 0 0 0 0.15rem rgba(46, 125, 50, 0.2);
+
+    background: white;
+
+}
+
+/* LABEL */
+
+label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+/* PASSWORD STRENGTH */
+
+#strengthText {
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* REGISTER BUTTON */
+
+.register-btn {
+
+    background: linear-gradient(to right,
+            #fbc02d,
+            #f9a825);
+
+    border: none;
+
+    border-radius: 40px;
+
+    padding: 14px;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: white;
+
+    transition: all .3s ease;
+
+}
+
+.register-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+}
+
+/* LOGIN LINK */
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* RECAPTCHA */
+
+.g-recaptcha {
+    transform: scale(.95);
+    transform-origin: left;
+}
+
+/* MOBILE */
+
+@media (max-width:768px) {
+
+    .register-card {
+        margin: 20px;
+    }
+
+    .branding-panel {
+        display: none;
+    }
+
+}

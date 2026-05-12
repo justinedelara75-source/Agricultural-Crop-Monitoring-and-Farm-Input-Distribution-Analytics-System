@@ -1,0 +1,700 @@
+/* ============================================================
+   DASHBOARD REDESIGN — Override File
+   Ilagay ang link nito sa dashboard.php PAGKATAPOS ng layout_top.php include
+   <link rel="stylesheet" href="assets/css/dashboard_redesign.css">
+   ============================================================ */
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* ============================================================
+   GLOBAL RESET & FONT
+   ============================================================ */
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif !important;
+    background: #f0f4f0 !important;
+    background-image:
+        url('../assets/img/bg_main_texture.png'),          /* <- ilagay mo yung texture/pattern mo dito */
+        linear-gradient(160deg, #e8f5e9 0%, #f1f8e9 50%, #f9fbe7 100%) !important;
+    background-attachment: fixed !important;
+}
+
+/* ============================================================
+   SIDEBAR REDESIGN
+   ============================================================ */
+.sidebar {
+    width: 220px !important;
+    background:
+        url('../assets/img/sidebar_farm_illustration.png') bottom center / 100% auto no-repeat,
+        /* ^ Ilagay mo dito yung farm illustration PNG mo */
+        linear-gradient(185deg, #0d2b12 0%, #1a4d20 45%, #1e6626 80%, #256b2a 100%) !important;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.35) !important;
+    padding-bottom: 160px !important; /* space para sa illustration sa baba */
+}
+
+.logo-box {
+    padding: 24px 12px 18px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    margin-bottom: 10px !important;
+}
+
+.logo-box img {
+    width: 120px !important;
+    height: 120px !important;
+    border: 3px solid rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 0 6px rgba(255, 255, 255, 0.1) !important;
+}
+
+.logo-box h4 {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 13px !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin-top: 10px !important;
+}
+
+/* Nav links */
+.sidebar a {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 13px !important;
+    padding: 11px 15px !important;
+    border-radius: 12px !important;
+    margin: 3px 5px !important;
+    color: rgba(255, 255, 255, 0.82) !important;
+    transition: all 0.2s ease !important;
+    letter-spacing: 0.2px !important;
+}
+
+.sidebar a:hover {
+    background: rgba(255, 255, 255, 0.13) !important;
+    color: #ffffff !important;
+    transform: translateX(4px) !important;
+    padding-left: 18px !important;
+}
+
+.sidebar a.active-link {
+    background: linear-gradient(90deg, #f9a825, #f4c430) !important;
+    color: #1a3d1f !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 16px rgba(249, 168, 37, 0.45) !important;
+}
+
+.sidebar a.active-link:hover {
+    transform: none !important;
+    padding-left: 15px !important;
+}
+
+/* ============================================================
+   MAIN CONTENT AREA
+   ============================================================ */
+.main {
+    margin-left: 220px !important;
+    padding: 0 !important;
+    min-height: 100vh !important;
+    background: transparent !important;
+}
+
+/* ============================================================
+   TOPBAR REDESIGN
+   ============================================================ */
+.topbar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 14px 28px !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid #e5ede5 !important;
+    margin-bottom: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 50 !important;
+}
+
+.topbar .sys-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 14.5px !important;
+    font-weight: 700 !important;
+    color: #1a5c2a !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+/* Leaf icon before the title — add this in HTML: <span class="leaf-icon">🌿</span> */
+.topbar .sys-title::before {
+    content: '🌿';
+    font-size: 18px;
+}
+
+.tb-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+/* Export CSV & Print Buttons */
+.btn-x {
+    font-family: 'Poppins', sans-serif !important;
+    padding: 8px 16px !important;
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.2px !important;
+    transition: all 0.2s ease !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+.btn-outline {
+    background: #ffffff !important;
+    border: 1.5px solid #1a5c2a !important;
+    color: #1a5c2a !important;
+    box-shadow: 0 2px 8px rgba(26, 92, 42, 0.1) !important;
+}
+
+.btn-outline:hover {
+    background: #f1f8e9 !important;
+    box-shadow: 0 4px 12px rgba(26, 92, 42, 0.2) !important;
+    transform: translateY(-1px) !important;
+}
+
+.btn-solid {
+    background: linear-gradient(135deg, #1a5c2a, #2e7d32) !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(26, 92, 42, 0.35) !important;
+}
+
+.btn-solid:hover {
+    background: linear-gradient(135deg, #14441f, #245e27) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 18px rgba(26, 92, 42, 0.4) !important;
+}
+
+/* Admin profile pill */
+.tb-right > div:last-child {
+    background: #f9fafb !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 24px !important;
+    padding: 5px 14px 5px 5px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+}
+
+.tb-right > div:last-child img {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    border: 2px solid #c8e6c9 !important;
+}
+
+/* ============================================================
+   INNER CONTENT WRAPPER (add this div in dashboard.php around everything below topbar)
+   ============================================================ */
+/* Wrap with: <div class="dash-content"> ... </div> */
+.dash-content {
+    padding: 22px 28px !important;
+}
+
+/* ============================================================
+   FILTER BAR REDESIGN
+   ============================================================ */
+.filter-bar {
+    background: #ffffff !important;
+    border-radius: 16px !important;
+    padding: 16px 20px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    align-items: flex-end !important;
+    margin-bottom: 20px !important;
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.07) !important;
+    border: 1px solid rgba(200, 230, 201, 0.5) !important;
+}
+
+.fb-group label {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    color: #6b7280 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+    display: block !important;
+    margin-bottom: 5px !important;
+}
+
+.fb-group select {
+    font-family: 'Poppins', sans-serif !important;
+    border: 1.5px solid #d1d5db !important;
+    border-radius: 10px !important;
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+    color: #374151 !important;
+    background: #f9fafb !important;
+    min-width: 120px !important;
+    transition: all 0.2s !important;
+    cursor: pointer !important;
+}
+
+.fb-group select:focus {
+    outline: none !important;
+    border-color: #1a5c2a !important;
+    box-shadow: 0 0 0 3px rgba(26, 92, 42, 0.12) !important;
+    background: #ffffff !important;
+}
+
+.btn-filter {
+    font-family: 'Poppins', sans-serif !important;
+    padding: 9px 22px !important;
+    background: linear-gradient(135deg, #1a5c2a, #2e7d32) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 12px rgba(26, 92, 42, 0.35) !important;
+    transition: all 0.2s !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    letter-spacing: 0.3px !important;
+}
+
+.btn-filter:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 18px rgba(26, 92, 42, 0.4) !important;
+}
+
+.btn-reset {
+    font-family: 'Poppins', sans-serif !important;
+    padding: 9px 16px !important;
+    background: #f3f4f6 !important;
+    color: #6b7280 !important;
+    border: 1.5px solid #e5e7eb !important;
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    transition: all 0.2s !important;
+    text-decoration: none !important;
+}
+
+.btn-reset:hover {
+    background: #e5e7eb !important;
+    color: #374151 !important;
+}
+
+/* ============================================================
+   KPI CARDS REDESIGN
+   ============================================================ */
+.kpi-grid {
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 14px !important;
+    margin-bottom: 20px !important;
+}
+
+@media (max-width: 1300px) { .kpi-grid { grid-template-columns: repeat(3, 1fr) !important; } }
+@media (max-width: 900px)  { .kpi-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+
+.kpi-card {
+    background: #ffffff !important;
+    border-radius: 18px !important;
+    padding: 18px 16px !important;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    transition: all 0.25s ease !important;
+    border: 1px solid rgba(200, 230, 201, 0.4) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Subtle top accent bar */
+.kpi-card::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important; left: 0 !important; right: 0 !important;
+    height: 3px !important;
+    background: linear-gradient(90deg, #1a5c2a, #4caf50) !important;
+    border-radius: 18px 18px 0 0 !important;
+}
+
+.kpi-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 10px 30px rgba(26, 92, 42, 0.14) !important;
+    border-color: rgba(200, 230, 201, 0.8) !important;
+}
+
+/* KPI icon box redesign */
+.kpi-ico {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 22px !important;
+    flex-shrink: 0 !important;
+    /* Ipalitan mo na ng PNG icon: 
+       <img src="assets/img/icons/farmer.png" style="width:26px;height:26px;"> */
+}
+
+/* Icon background colors — mas maganda na */
+.ico-g { background: linear-gradient(135deg, #dcfce7, #bbf7d0) !important; }
+.ico-t { background: linear-gradient(135deg, #ccfbf1, #99f6e4) !important; }
+.ico-y { background: linear-gradient(135deg, #fef9c3, #fef08a) !important; }
+.ico-r { background: linear-gradient(135deg, #fee2e2, #fecaca) !important; }
+.ico-b { background: linear-gradient(135deg, #dbeafe, #bfdbfe) !important; }
+.ico-p { background: linear-gradient(135deg, #ede9fe, #ddd6fe) !important; }
+
+.kpi-lbl {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 9.5px !important;
+    font-weight: 700 !important;
+    color: #9ca3af !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+    margin-bottom: 4px !important;
+}
+
+.kpi-val {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    color: #111827 !important;
+    line-height: 1 !important;
+}
+
+.kpi-sub {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 10px !important;
+    color: #9ca3af !important;
+    margin-top: 3px !important;
+}
+
+/* ============================================================
+   PANELS (chart cards) REDESIGN
+   ============================================================ */
+.panel {
+    background: #ffffff !important;
+    border-radius: 20px !important;
+    padding: 22px 24px !important;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07) !important;
+    border: 1px solid rgba(200, 230, 201, 0.35) !important;
+    height: auto !important;
+    transition: box-shadow 0.2s !important;
+}
+
+.panel:hover {
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Override layout_top.php .panel p rule */
+.panel p {
+    background: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    margin-bottom: 0 !important;
+    display: block !important;
+    font-size: inherit !important;
+}
+
+.p-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 13.5px !important;
+    font-weight: 700 !important;
+    color: #1a3d1f !important;
+    margin-bottom: 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.p-title small {
+    font-size: 11px !important;
+    color: #9ca3af !important;
+    font-weight: 500 !important;
+}
+
+/* Switch to Line / Toggle button */
+#toggleBtn {
+    cursor: pointer !important;
+    padding: 5px 14px !important;
+    background: #f1f8e9 !important;
+    border: 1.5px solid #c8e6c9 !important;
+    border-radius: 8px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: #1a5c2a !important;
+    transition: all 0.2s !important;
+}
+
+#toggleBtn:hover {
+    background: #1a5c2a !important;
+    color: #fff !important;
+    border-color: #1a5c2a !important;
+}
+
+/* ============================================================
+   LAYOUT GRIDS
+   ============================================================ */
+.g84 {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr !important;
+    gap: 16px !important;
+    margin-bottom: 16px !important;
+}
+
+.g66 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+    margin-bottom: 16px !important;
+}
+
+@media (max-width: 1050px) {
+    .g84, .g66 { grid-template-columns: 1fr !important; }
+}
+
+/* ============================================================
+   AVAILABLE INPUT ROWS
+   ============================================================ */
+.inp-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 12px 0 !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+}
+
+.inp-row:last-child { border-bottom: none !important; }
+
+.inp-lft {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    color: #374151 !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.inp-val {
+    font-size: 14px !important;
+    font-weight: 800 !important;
+    color: #1a5c2a !important;
+    font-family: 'Poppins', sans-serif !important;
+    background: #f1f8e9 !important;
+    padding: 4px 12px !important;
+    border-radius: 20px !important;
+    border: 1px solid #c8e6c9 !important;
+}
+
+/* ============================================================
+   SMART INSIGHTS
+   ============================================================ */
+.ins-item {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    padding: 10px 12px !important;
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    color: #374151 !important;
+    margin-bottom: 6px !important;
+    background: #f9fafb !important;
+    border: 1px solid #f3f4f6 !important;
+    font-family: 'Poppins', sans-serif !important;
+    line-height: 1.5 !important;
+}
+
+.ins-ico {
+    font-size: 17px !important;
+    flex-shrink: 0 !important;
+    margin-top: 1px !important;
+}
+
+/* ============================================================
+   PROFITABILITY DONUT SECTION
+   ============================================================ */
+.donut-wrap {
+    display: flex !important;
+    align-items: center !important;
+    gap: 24px !important;
+    padding: 10px 0 !important;
+}
+
+.d-leg {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+}
+
+.d-leg-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 12px !important;
+    font-family: 'Poppins', sans-serif !important;
+    color: #374151 !important;
+}
+
+.dot {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+}
+
+/* Profitability percentage label */
+#profitChart + div > div:first-child {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 800 !important;
+}
+
+/* ============================================================
+   TOP BARANGAYS TABLE
+   ============================================================ */
+.dtbl {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 12px !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.dtbl thead th {
+    background: linear-gradient(135deg, #f1f8e9, #e8f5e9) !important;
+    padding: 11px 12px !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    color: #2e7d32 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.7px !important;
+    text-align: left !important;
+    border-bottom: 2px solid #c8e6c9 !important;
+}
+
+.dtbl tbody td {
+    padding: 12px !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+    color: #374151 !important;
+    vertical-align: middle !important;
+    font-size: 12px !important;
+}
+
+.dtbl tbody tr:last-child td { border-bottom: none !important; }
+
+.dtbl tbody tr:hover td {
+    background: #f9fbe7 !important;
+}
+
+/* Rank badges */
+.rnk {
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.rk1 { background: linear-gradient(135deg, #fde68a, #f59e0b) !important; color: #78350f !important; box-shadow: 0 2px 8px rgba(245,158,11,0.4) !important; }
+.rk2 { background: linear-gradient(135deg, #e5e7eb, #d1d5db) !important; color: #374151 !important; }
+.rk3 { background: linear-gradient(135deg, #fde68a, #d97706) !important; color: #78350f !important; }
+.rkn { background: #f3f4f6 !important; color: #9ca3af !important; }
+
+/* Status badges */
+.bdg {
+    padding: 4px 12px !important;
+    border-radius: 20px !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    display: inline-block !important;
+    font-family: 'Poppins', sans-serif !important;
+    letter-spacing: 0.3px !important;
+}
+
+.bdg-h {
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0) !important;
+    color: #15803d !important;
+    border: 1px solid #86efac !important;
+}
+
+.bdg-m {
+    background: linear-gradient(135deg, #fef9c3, #fef08a) !important;
+    color: #a16207 !important;
+    border: 1px solid #fde047 !important;
+}
+
+.bdg-l {
+    background: linear-gradient(135deg, #fee2e2, #fecaca) !important;
+    color: #b91c1c !important;
+    border: 1px solid #fca5a5 !important;
+}
+
+/* ============================================================
+   COMPARATIVE CROP ANALYTICS — Progress Bars
+   ============================================================ */
+.bar-wrap {
+    width: 100% !important;
+    background: #f3f4f6 !important;
+    border-radius: 6px !important;
+    height: 9px !important;
+    overflow: hidden !important;
+}
+
+.bar-fill {
+    height: 100% !important;
+    border-radius: 6px !important;
+    transition: width 0.6s ease !important;
+}
+
+/* ============================================================
+   CHART CANVAS OVERRIDES
+   ============================================================ */
+#productionChart { height: 240px !important; width: 100% !important; margin-top: 10px; }
+#trendChart      { height: 210px !important; width: 100% !important; margin-top: 10px; }
+#profitChart     { height: 150px !important; width: 150px !important; margin-top: 0;   }
+
+/* ============================================================
+   SCROLL ANIMATIONS — fade up on load
+   ============================================================ */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.kpi-card      { animation: fadeUp 0.4s ease both; }
+.kpi-card:nth-child(1) { animation-delay: 0.05s; }
+.kpi-card:nth-child(2) { animation-delay: 0.10s; }
+.kpi-card:nth-child(3) { animation-delay: 0.15s; }
+.kpi-card:nth-child(4) { animation-delay: 0.20s; }
+.kpi-card:nth-child(5) { animation-delay: 0.25s; }
+.kpi-card:nth-child(6) { animation-delay: 0.30s; }
+.panel { animation: fadeUp 0.5s ease 0.2s both; }
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+    .filter-bar, .btn-x, .topbar .tb-right, .btn-filter, .btn-reset { display: none !important; }
+    .sidebar { display: none !important; }
+    .main { margin-left: 0 !important; }
+}
